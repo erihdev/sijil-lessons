@@ -327,7 +327,9 @@ f.appendChild(h);
 var w=el("div",null,"");w.style.textAlign="center";
 w.appendChild(el("h2",null,"مغامرة اليوم: "+D.l));
 var m=el("div","meta");
-[D.s,"وحدة: "+D.u,"الأسبوع "+D.w,"معلمك: "+D.tn].forEach(function(x){
+var chips=[D.s,"وحدة: "+D.u,"الأسبوع "+D.w];
+if(D.tn)chips.push("معلمك: "+D.tn);
+chips.forEach(function(x){
 if(x&&x.indexOf("undefined")<0)m.appendChild(el("span",null,x));});
 w.appendChild(m);
 w.appendChild(el("p","lead","محطات قصيرة ممتعة: رتّب ووصّل وأجب وفكّر وطبّق — واجمع "+total+" نجوم "+STAR+" لتحصل على شهادتك!"));
@@ -505,7 +507,7 @@ inr.appendChild(el("p","ln","من وحدة «"+D.u+"» — الأسبوع "+D.w)
 inr.appendChild(el("div","stars-row",s));
 var dt="";try{dt=new Intl.DateTimeFormat("ar-SA-u-ca-islamic-umalqura",{dateStyle:"long"}).format(new Date());}catch(e){}
 var ftr=el("div","ft");
-ftr.appendChild(el("span",null,"معلم المادة: "+D.tn));
+if(D.tn)ftr.appendChild(el("span",null,"معلم المادة: "+D.tn));
 if(dt)ftr.appendChild(el("span",null,dt));
 inr.appendChild(ftr);c.appendChild(inr);holder.appendChild(c);
 var row2=el("div","nav");row2.style.justifyContent="center";
