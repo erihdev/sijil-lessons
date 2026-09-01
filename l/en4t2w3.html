@@ -461,8 +461,14 @@ f.appendChild(db);f.appendChild(rv);f.appendChild(box);return f;};
 R.apply=function(st,i){var f=document.createDocumentFragment();
 f.appendChild(el("span","kick k3","مهمة بطولية"));f.appendChild(el("h2",null,"طبّق ما تعلّمت"));
 var t=el("div","task");t.appendChild(el("h3",null,"المهمة "+TROPHY));t.appendChild(el("p",null,st.q.q));
+var how=el("div","reveal on");how.style.display="block";
+how.innerHTML="<b>كيف أنفّذ المهمة؟</b><br>"+
+"أولاً: اقرأ المهمة جيداً — المطلوب عمل حقيقي تنفّذه بنفسك (في دفترك، أو على جهازك، أو بأدوات مادتك).<br>"+
+"ثانياً: نفّذها خطوة بخطوة، واكتب خطواتك بالترتيب في دفترك.<br>"+
+"ثالثاً: اعرض ما أنجزته على معلمك في الفصل، أو صوّره وأرسله له.";
+t.appendChild(how);
 var ul=el("ul","check"),n=0,box=say();
-["قرأت المهمة وفهمتها","نفذتها كاملة","راجعت عملي قبل العرض"].forEach(function(x){
+["قرأت المهمة وفهمت المطلوب مني","نفّذتها وكتبت خطواتي بالترتيب","عرضت عملي على معلمي أو صوّرته لإرساله"].forEach(function(x){
 var b=el("button",null,"<span class=\"box\">"+CHECK+"</span><span>"+x+"</span>");
 b.setAttribute("aria-pressed","false");
 b.addEventListener("click",function(){var on=b.getAttribute("aria-pressed")==="true";
